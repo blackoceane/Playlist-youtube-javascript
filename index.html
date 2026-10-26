@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste de vidéos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="projetFinal.css">
+
+  
+</head>
+<body class="p-4">
+
+  <div class="container">
+
+    
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>Mes vidéos</h2>
+      <button id="montrerFormulaire" class="btn btn-primary">+ Ajouter une vidéo</button>
+    </div>
+
+    <!-- Tableau des vidéos -->
+    <table class="table table-bordered" id="table" style="display: none;">
+      <thead class="table-light">
+        <tr>
+          <th>Nom</th>
+          <th>Durée (min)</th>
+          <th>URL</th>
+          <th>Favori</th>
+          <th>play</th>
+          <th>edition</th>
+          <th>supprimer</th>
+        </tr>
+      </thead>
+      <div id="video-player-container" class="mb-4 text-center text-muted" style="min-height: 100px; display: flex; align-items: center; justify-content: center;"></div>
+
+      <tbody id="videolist">
+        
+      </tbody>
+    </table>
+
+
+    <!-- Message si aucun contenu -->
+    <div id="empty-message" class="text-muted">Aucune vidéo pour le moment.</div>
+
+    <!-- Formulaire -->
+    <form id="videoformulaire" class="form-section d-none">
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="nom">
+        <div class="invalid-feedback">Le nom est requis.</div>
+      </div>
+      <div class="mb-3">
+        <label for="url" class="form-label">URL</label>
+        <input type="text" class="form-control" id="url">
+        <div class="invalid-feedback">URL invalide.</div>
+      </div>
+      <div class="mb-3">
+       
+        <label for="duree" class="form-label">Durée</label>
+        <input type="text" class="form-control" id="duree" placeholder="hh:mm:ss">
+        <div class="invalid-feedback">Durée invalide.</div>
+      </div>
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="favori">
+        <label class="form-check-label" for="favori">Vidéo favorite</label>
+      </div>
+      <button type="submit" class="btn btn-success">Ajouter</button>
+      <button type="button" class="btn btn-secondary" id="annuler">Annuler</button>
+    </form>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="projetFinal.js"></script>
+</body>
+</html>
